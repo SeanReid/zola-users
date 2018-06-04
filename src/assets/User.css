@@ -1,8 +1,9 @@
 .user {
     text-align: center;
-    width: 30%;
-    min-width: 201px;
-    margin: 1px;
+    width: 25%;
+    min-height: 400px;
+    max-width: 300px;
+    margin: 25px;
     border:2px black solid;
     font-size: 12px;
     padding-bottom: 20px;
