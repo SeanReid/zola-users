@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Users from './components/Users'
 import data from './data/users.json'
 import CategoryFilters from './components/CategoryFilters';
+
 class App extends Component {
   constructor() {
     super()
