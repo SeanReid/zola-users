@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import User from './User'
+import '../assets/Users.css'
 
 class Users extends Component {
     render() {
@@ -12,7 +13,7 @@ class Users extends Component {
         }
 
         return (
-            <div>{users}
+            <div className="users">{users}
             </div>
         )
     }
