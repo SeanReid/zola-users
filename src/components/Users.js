@@ -7,7 +7,8 @@ const Users = (props) => {
     
     if (props.users) {
         users = props.users.map((user, index) => {
-            return <User key={index} user={user}></User>;
+            return <User key={user.name} user={user}></User>
+            //using name as key rather than index as the list order changes and names are currently unique
         })
     }
 

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.css'
 import Users from './components/Users'
 import data from './data/users.json'
 import CategoryFilters from './components/CategoryFilters';
@@ -7,7 +8,7 @@ import Sort from './components/Sort';
 class App extends Component {
   constructor() {
     super()
-    this.state = {users: data.data, categoryFilter: '', initialUsers: Object.assign([], data.data)};
+    this.state = {users: data.data, categoryFilter: '', sortByValue: '', initialUsers: Object.assign([], data.data)};
     //copying data.data to maintain initial order rather than cheat and ref pseudo api call data.data
   }
 
@@ -17,6 +18,7 @@ class App extends Component {
 
   sortBy = (key) => {
     this.setState({
+      sortByValue: key,
       users: key ? this.state.users.sort((a,b) => a[key] > b[key]) : Object.assign([], this.state.initialUsers)
     })
   }
@@ -28,7 +30,7 @@ class App extends Component {
     return (
       <div className="App">
         <CategoryFilters categories={this.state.users.map(u => u.category)} categoryFilter={this.categoryFilter}/>
-        <Sort sortBy={this.sortBy}/>
+        <Sort sortBy={this.sortBy} value={this.sortByValue}/>
         <Users users={filteredUsers}/>
       </div>
     )
